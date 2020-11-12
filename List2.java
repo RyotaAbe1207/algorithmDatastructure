@@ -6,7 +6,8 @@ public class List2 {
 	colors.add(0,"Brue");
 	colors.add(1,"Yellow");
 	colors.add(2,"Red");
-//	colors.add(1,"Green"); //ここで第1要素(2番目)にGreenが入る
+	colors.add(1,"Green"); //ここで第1要素(2番目)にGreenが入る
+	colors.remove(2); //Yellowを削除
 
 	for(String c : colors) {
 
