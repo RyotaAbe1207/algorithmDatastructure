@@ -1,11 +1,11 @@
 //ハッシュテーブル
 package dataStructure;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 public class HashTable {
 
 	public static void main(String[] args) {
-		Map<String,String> names = new HashMap<String, String>();
+		Map<String,String> names = new LinkedHashMap<String, String>();
 		names.put("Joe","M");
 		names.put("Sue","F");
 		names.put("Dan","M");
@@ -18,12 +18,9 @@ public class HashTable {
 		//HashMapは順番が保証されない．LinkedHashMapを使うべき
 		for(String key : names.keySet()) {
 			i++;
-			System.out.println(i);
-			System.out.println(key);
-
-			if(key == "Joe"){
+			//key == "Ally"でtrueと返るのはコンスタントプールの恩恵
+			if(key == "Ally"){
 				s = names.get("Ally");
-				System.out.println(i);
 				break;
 			}
 		}
