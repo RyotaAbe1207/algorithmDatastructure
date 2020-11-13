@@ -15,11 +15,15 @@ public class HashTable {
 		//Allyを探す
 		int i = 0;
 		String s = null;
-		for(; i < names.size(); i++) {
-			//if文で==を使うと，String型は参照型なので，等値じゃないとfalseが返る．
-			//そのため，このコードではAllyは何番目か探せない．
-			if(names.get("Ally") == "Ally") {
+		//HashMapは順番が保証されない．LinkedHashMapを使うべき
+		for(String key : names.keySet()) {
+			i++;
+			System.out.println(i);
+			System.out.println(key);
+
+			if(key == "Joe"){
 				s = names.get("Ally");
+				System.out.println(i);
 				break;
 			}
 		}
