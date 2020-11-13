@@ -10,7 +10,7 @@ public class Stack {
 		colors.add(2,"Red");
 
 		for(int i = 0; i < colors.size(); i++) {
-			c = colors.get(i);
+			c = colors.get(colors.size()-1-i);
 			System.out.println(c);
 		}
 
