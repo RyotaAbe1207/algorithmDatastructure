@@ -1,3 +1,4 @@
+//ハッシュテーブル
 package dataStructure;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +16,8 @@ public class HashTable {
 		int i = 0;
 		String s = null;
 		for(; i < names.size(); i++) {
+			//if文で==を使うと，String型は参照型なので，等値じゃないとfalseが返る．
+			//そのため，このコードではAllyは何番目か探せない．
 			if(names.get("Ally") == "Ally") {
 				s = names.get("Ally");
 				break;
