@@ -10,7 +10,7 @@ public class HashTable {
 		names.put("Sue","F");
 		names.put("Dan","M");
 		names.put("Nell","F");
-		names.put("Ally","F");
+		names.put(new String("Ally"),"F");
 		names.put("Bob","M");
 		//Allyを探す
 		int i = 0;
@@ -19,6 +19,7 @@ public class HashTable {
 		for(String key : names.keySet()) {
 			i++;
 			//key == "Ally"でtrueと返るのはコンスタントプールの恩恵
+			//このコードで13行目でnew String("Ally")としているので，falseが返る．
 			if(key == "Ally"){
 				s = names.get("Ally");
 				break;
