@@ -1,4 +1,5 @@
 //ハッシュテーブル
+//ひとまず完成？
 package dataStructure;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -6,10 +7,8 @@ public class HashTable {
 
 	public static void main(String[] args) {
 		Map<String,String> names = new LinkedHashMap<String, String>();
-		int result = 0;
+		int[] hashResult = new int[5]; //ハッシュコードの結果を格納する配列
 		names.put("Joe","M");
-		result = names.get("Joe").hashCode(); //ハッシュ値取得
-		System.out.println(result);
 		names.put("Sue","F");
 		names.put("Dan","M");
 		names.put("Nell","F");
@@ -20,6 +19,7 @@ public class HashTable {
 		String s = null;
 		//HashMapは順番が保証されない．LinkedHashMapを使うべき
 		for(String key : names.keySet()) {
+			hashResult[i] = names.get(key).hashCode();
 			i++;
 			//key == "Ally"でtrueと返るのはコンスタントプールの恩恵
 			//13行目names.put(new String("Ally"),"F");とするとnullが返る．
@@ -31,7 +31,6 @@ public class HashTable {
 		}
 		System.out.println("Allyの性別は"+s);
 		System.out.println("Allyは"+i+"番目");
-//		System.out.println(names.get("Joe").hashCode());
 	}
 
 }
