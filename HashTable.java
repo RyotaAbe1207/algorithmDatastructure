@@ -6,7 +6,10 @@ public class HashTable {
 
 	public static void main(String[] args) {
 		Map<String,String> names = new LinkedHashMap<String, String>();
+		int result = 0;
 		names.put("Joe","M");
+		result = names.get("Joe").hashCode(); //ハッシュ値取得
+		System.out.println(result);
 		names.put("Sue","F");
 		names.put("Dan","M");
 		names.put("Nell","F");
@@ -28,6 +31,7 @@ public class HashTable {
 		}
 		System.out.println("Allyの性別は"+s);
 		System.out.println("Allyは"+i+"番目");
+//		System.out.println(names.get("Joe").hashCode());
 	}
 
 }
