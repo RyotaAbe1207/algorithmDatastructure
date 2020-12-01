@@ -10,7 +10,7 @@ public class HashTable {
 		names.put("Sue","F");
 		names.put("Dan","M");
 		names.put("Nell","F");
-		names.put("Ally","F");
+		names.put(new String("Ally"),"F");
 		names.put("Bob","M");
 		//Allyを探す
 		int i = 0;
@@ -19,7 +19,9 @@ public class HashTable {
 		for(String key : names.keySet()) {
 			i++;
 			//key == "Ally"でtrueと返るのはコンスタントプールの恩恵
-			if(key == "Ally"){
+			//13行目names.put(new String("Ally"),"F");とするとnullが返る．
+			//equalsをオーバーライドしてないけど，なぜか正しい結果が出てくるのはなぜ？
+			if(key.equals("Ally")){
 				s = names.get("Ally");
 				break;
 			}
